@@ -14,9 +14,6 @@ public class Calculator
 	}
 	
 
-
-
-
 public static int addMultipleNo(String string) {
     if (string != null && !string.isEmpty()) {
         if (!string.contains(",")) {
@@ -30,6 +27,16 @@ public static int addMultipleNo(String string) {
         return list.stream().reduce(Integer::sum).orElseThrow();
     }
     return 0; 
+}
+
+public static int nonewline(String string) {
+    if (string != null && !string.isEmpty()) {
+        List<Integer> list = Arrays.stream(string.split("[,\\n\\r]+")) // Split by comma, newline, or carriage return
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
+        return list.stream().reduce(Integer::sum).orElseThrow();
+    }
+    return 0; // Return 0 if the string is empty or null
 }
 
 }

@@ -32,6 +32,6 @@ public class CalculatorTest
 	 
 	 @Test
 		void additionSplitByCommasAndNewLine() {
-			Assertions.assertThat(Calculator.addMultipleNo("2,5,3\n5")).isEqualTo(15);
+			Assertions.assertThat(Calculator.nonewline("2,5,3\n5")).isEqualTo(15);
 		}
 }
