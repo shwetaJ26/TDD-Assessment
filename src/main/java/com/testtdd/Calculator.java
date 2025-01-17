@@ -40,25 +40,30 @@ public static int nonewline(String string) {
 }
 
 public static int checkdelimiter(String string) {
-    if (string == null || string.isEmpty()) {
-        return 0;
-    }
+	   if (string == null || string.isEmpty()) {
+           return 0;
+       }
 
-    // Check if custom delimiter is defined at the start of the string
-    if (string.startsWith("//")) {
-        String delimiterSection = string.substring(2, string.indexOf('\n'));
-        String delimiter = delimiterSection.equals(";") ? ";" : ",|\n"; // Default delimiter is comma or newline
+       // Check if custom delimiter is provided
+       if (string.startsWith("//")) {
+           // Extract the delimiter definition (up to the newline)
+           String delimiterSection = string.substring(2, string.indexOf('\n'));
+           String delimiter = delimiterSection;
+           
+           // Extract the numbers after the newline character
+           string = string.substring(string.indexOf('\n') + 1);
 
-        return Arrays.stream(string.split(delimiter))
-                     .mapToInt(Integer::parseInt)
-                     .sum();
-    }
+           // Split using the custom delimiter
+           return Arrays.stream(string.split(delimiter))
+                        .mapToInt(Integer::parseInt)
+                        .sum();
+       }
 
-    // If no custom delimiter, use default delimiters
-    return Arrays.stream(string.split(",|\n"))
-                 .mapToInt(Integer::parseInt)
-                 .sum();
-}
+       // If no custom delimiter, use the default delimiters (comma and newline)
+       return Arrays.stream(string.split(",|\n"))
+                    .mapToInt(Integer::parseInt)
+                    .sum();
+   }
 
 }
 

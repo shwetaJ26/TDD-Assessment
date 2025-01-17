@@ -35,7 +35,8 @@ public class CalculatorTest
 			Assertions.assertThat(Calculator.nonewline("2,5,3\n5")).isEqualTo(15);
 		}
 	 @Test
-		void additionForDelimeter() {
-			Assertions.assertThat(Calculator.checkdelimiter("//;2;5,3\n5")).isEqualTo(15);
-		}
+	 void additionForDelimeter() {
+	     Assertions.assertThat(Calculator.checkdelimiter("//;2;5,3\n5")).isEqualTo(15);
+	 }
+
 }
