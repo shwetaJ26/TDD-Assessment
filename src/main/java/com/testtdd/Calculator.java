@@ -9,7 +9,7 @@ public class Calculator
 		
 	}
 	
-public static int addoneno(String string) {
+public static int addmultipleno(String string) {
 		
 		if(!string.isEmpty()) {
 			return Integer.parseInt(string);
