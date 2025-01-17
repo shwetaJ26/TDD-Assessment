@@ -39,4 +39,10 @@ public class CalculatorTest
 	     Assertions.assertThat(Calculator.checkdelimiter("//;2;5,3\n5")).isEqualTo(15);
 	 }
 
+	 @Test
+		void additionForNegative() {
+			Assertions.assertThatThrownBy(() -> Calculator.negatives("1,-5,4,6,-3"))
+			.hasMessageContaining("Negatives are not allowed")
+			.hasMessageContaining("-5,-3");
+		}
 }

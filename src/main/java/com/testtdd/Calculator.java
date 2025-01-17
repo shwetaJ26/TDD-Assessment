@@ -65,5 +65,17 @@ public static int checkdelimiter(String string) {
                     .sum();
    }
 
+public static void negatives(String string) {
+    StringBuilder sb = new StringBuilder();
+    // Split the string by commas and convert the array to a stream
+    Arrays.stream(string.strip()
+        .split(",")) // Split the string into an array
+        .mapToInt(Integer::parseInt) // Convert each part to an integer
+        .filter(num -> num < 0) // Filter for negative numbers
+        .forEach(num -> sb.append(num).append(","));
+    
+    
 }
+}
+
 
