@@ -8,5 +8,14 @@ public class Calculator
 		return 0;
 		
 	}
+	
+public static int addoneno(String string) {
+		
+		if(!string.isEmpty()) {
+			return Integer.parseInt(string);
+		}
+		return 0;
+
+	}
 
 }

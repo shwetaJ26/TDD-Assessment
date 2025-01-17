@@ -14,4 +14,9 @@ public class CalculatorTest
 		void additionZeroForEmptyString() {
 			Assertions.assertThat(calculator.add("")).isEqualTo(0);
 		}
+	 
+	 @Test
+		void additionForOneInput() {
+			Assertions.assertThat(Calculator.addoneno("5")).isEqualTo(5);
+		}
 }
