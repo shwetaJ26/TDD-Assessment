@@ -74,7 +74,11 @@ public static void negatives(String string) {
         .filter(num -> num < 0) // Filter for negative numbers
         .forEach(num -> sb.append(num).append(","));
     
-    
+    if (sb.length() > 0) {
+        // Remove the last comma
+        sb.setLength(sb.length() - 1);
+        throw new RuntimeException("Negatives are not allowed: " + sb.toString());
+    }
 }
 }
 
