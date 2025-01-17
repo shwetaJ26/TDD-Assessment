@@ -39,5 +39,26 @@ public static int nonewline(String string) {
     return 0; // Return 0 if the string is empty or null
 }
 
+public static int checkdelimiter(String string) {
+    if (string == null || string.isEmpty()) {
+        return 0;
+    }
+
+    // Check if custom delimiter is defined at the start of the string
+    if (string.startsWith("//")) {
+        String delimiterSection = string.substring(2, string.indexOf('\n'));
+        String delimiter = delimiterSection.equals(";") ? ";" : ",|\n"; // Default delimiter is comma or newline
+
+        return Arrays.stream(string.split(delimiter))
+                     .mapToInt(Integer::parseInt)
+                     .sum();
+    }
+
+    // If no custom delimiter, use default delimiters
+    return Arrays.stream(string.split(",|\n"))
+                 .mapToInt(Integer::parseInt)
+                 .sum();
+}
+
 }
 
