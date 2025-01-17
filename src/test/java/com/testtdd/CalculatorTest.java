@@ -17,11 +17,11 @@ public class CalculatorTest
 	 
 	 @Test
 		void additionForOneInput() {
-			Assertions.assertThat(Calculator.addmultipleno("5")).isEqualTo(5);
+			Assertions.assertThat(Calculator.addMultipleNo("5")).isEqualTo(5);
 		}
 	 
 	 @Test
 		void additionForTwoInput() {
-			Assertions.assertThat(Calculator.addmultipleno("2,5")).isEqualTo(7);
+			Assertions.assertThat(Calculator.addMultipleNo("2,5")).isEqualTo(7);
 		}
 }
